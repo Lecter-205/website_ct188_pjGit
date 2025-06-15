@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Form Đăng Ký</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="dangky_style.css">
+    </head>
+    <body>
+        <!-- <img class="background" src="images/background.png" alt="background"> -->
+        <header>
+            <div class="page-header">
+                <img class="img-header" src="images/logo.png" alt="Freeeze-logo">
+                <nav class="nav-header">
+                    <a href="gioithieu.html" target="_blank"> Giới Thiệu</a> |
+                    <a href="sanpham.html" target="_blank"> Sản Phẩm</a> |
+                    <a href="tintuc.html" target="_blank"> Tin Tức</a> |
+                    <a href="dangnhap.html" target="_blank"> Đăng Nhập</a> |
+                    <a href="dangki.html" target="_blank"> Đăng Kí</a> |
+                    <a href="lienhe.html" target="_blank"> Liên Hệ</a>
+                </nav>
+                <div>
+                    <button type="submit" class="btn signin" name="fsignin" value="signin"> Sign In</button>
+                </div>
+                
+            </div>
+        </header>
+        <main>
+            <article class="page-body">
+                <div class="hero-text"> Rescue Animals!</div>
+                <fieldset class="sign_up-container">
+                    <form method="post" enctype="application/x-www-form-urlencoded">
+                        <legend class="form-title"> Sign Up</legend>
+                        <div class="input-group">
+                            <div class="col-30">
+                                <label for="email"> Email</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="text" class="input-text" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col-30">
+                                <label for="psw"> Mật khẩu</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="password" class="input-text" id="psw" name="psw" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col-30">
+                                <label for="confirm"> Nhập lại mật khẩu</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="password" class="input-text" id="confirm" name="confirm" required>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group">
+                            <span class="col-30"> Cấp độ thành viên</span>
+                            <div class="col-70">
+                                <label class="label-radio"><input type="radio" id="silver" name="level" value="bac" checked> Bạc</label>
+                                <label class="label-radio"><input type="radio" id="gold" name="level" value="vang"> Vàng</label>
+                                <label class="label-radio"><input type="radio" id="platinum" name="level" value="bachkim"> Bạch Kim</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="col-30">
+                                <label for="getfile"> Ảnh đại diện</label>
+                            </div>
+                            <div class="col-70">
+                                <input type="file" id="getfile" name="getfile">
+                            </div>
+                        </div>
+
+                        <div class="clause">
+                            Thông qua việc tạo tài khoản, bạn đồng ý với<a href="#" target="_blank"> Điều khoản & Quyền riêng tư của chúng tôi.</a>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="reset" class="btn reset" name="fsignup" value="cancel"> Hủy</button>
+                            <button type="submit" class="btn signup" name="fsignup" value="signup"> Đăng Ký</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </article>
+        </main>
+        <footer>
+            <div class="page-footer">
+            &copy; 2021 Bản quyền thuộc về FreeezeVN.
+                <a href="https://www.facebook.com" target="_blank"> Facebook</a>
+                <a href="https://www.twitter.com" target="_blank"> Twitter</a>
+                <a href="https://www.pinterest.com" target="_blank"> Pinterest</a>
+                <a href="#" target="_blank"> Về Đầu Trang</a>
+            </div>
+        </footer>
+    </body>
+</html>
