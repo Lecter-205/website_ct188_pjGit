@@ -1,0 +1,308 @@
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.gc {   /* Tạo bố cục ban đầu tổng quát */
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px auto auto 100px;
+
+    grid-template-areas:
+        "header header"
+        "heading heading"
+        "aside main"
+        "footer footer";
+}
+
+.header {
+    grid-area: header;
+    position: fixed;    /* cố định theo màn hình không bị cuộn theo nội dung */
+    width: 100%;
+    z-index: 100;   /* đảm bảo nằm trên cùng, độ ưu tiên cao nhất */
+    
+
+}
+.heading {
+    grid-area: heading;
+    /* background-color: #FFF5ED; */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+.aside {
+    grid-area: aside;
+    /* padding: 42px; */
+    /* border: 5px solid green; */
+}
+.main {
+    grid-area: main;
+    /* padding: 50px 30px 30px 40px;
+    margin-bottom: 200px; */
+    /* border: 5px solid blue; */
+}
+.footer {
+    grid-area: footer;
+    /* border: 2px solid orange; */
+}
+
+@media screen and (max-width: 600px) {  /* áp dụng cho màn hình nhỏ hơn 600px */
+    .gc {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 100px auto auto 100px;
+        grid-template-areas: 
+            "header"
+            "heading"
+            "main"
+            "footer"; */
+    }
+    .aside {display: none;}
+}
+
+
+.page-header {
+    /* background-color: rgba(255, 216, 190, 0.7); background-color: #FFD8BE; */
+    background-color: white;
+    border-bottom: 1px solid #E3DCD0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box; /* tránh tràn trang */
+}
+.img-header {
+    width: 60px;
+    margin-right: 35px;
+}
+.nav-header > a {
+    /* font-family: 'Montserrat'; */
+    color: black;
+    font-weight: 750;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-header > a:hover {text-decoration: underline; color: #4f4c4f;}
+.button-header {
+    margin-left: auto;
+}
+.btn {
+    width: 105px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+.signin {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: white;
+    background-color: black;
+}
+.btn:hover {cursor: pointer;}
+
+
+/* heading */
+/* .heading-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+} */
+.heading-left {
+    border: 2px solid red;
+    max-width: 700px;
+    max-height: 400px;
+    word-wrap: break-word;
+    padding: 15px 40px;
+    text-align: left;
+}
+.heading-group h1 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: #B037A6;
+    margin: 0;
+    /* border: 2px solid red; */
+}
+.heading-group p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #707070;
+    margin: 5px 0 0 0;
+    max-width: 800px;
+    line-height: 1.6;
+    /* border: 2px solid red; */
+}
+
+
+.search-bar {
+    width: 450px;
+    min-width: 200px;
+    height: 30px;
+    background-color: #F3F3F3;
+    border: 2px solid white;
+    border-radius: 18px;
+    padding: 8px 15px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+.search-dropdown {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: bold;
+    outline: none;
+    margin-right: 10px;
+}
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: black;
+    margin-right: 10px;
+}
+.search-bar img {
+    width: 25px;
+    margin-right: 10px;
+}
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+.search-bar:hover {border-color: #c2bebe;}
+.search-bar:focus-within {border-color: black;}
+
+
+
+/* aside */
+.aside h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+.aside .categories {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.categories .cat-item {
+    font-size: 17px;
+    padding: 12px 10px 12px 0;
+}
+.cat-item input {
+    transform: scale(2);
+    margin-right: 8px;
+}
+.custom-line {
+    border: none;
+    height: 2px;
+    background-color: black;
+}
+.bottom {
+    margin-top: 20px;
+}
+
+
+/* main */
+.main-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    gap: 18px;
+    border: 2px solid red;
+}
+.card {
+    border: 1px solid black;
+    border-radius: 18px;
+    background-color: #F2F5F8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    text-align: center;
+    
+}
+.card:hover {transform: scale(1.03); transition: transform 0.3s ease-in-out;}
+.img-container {
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.img-item {
+    width: 100%;
+    display: block;
+    object-fit: cover;  /* lấp đầy khung */
+}
+.card a {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.card p {
+    font-size: 14px;
+}
+.card a:hover {color: #4f4c4f;}
+
+
+.page-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hero-text {
+    font-family: 'Montserat', sans-serif;
+    font-weight: 900;
+    font-size: 45px;
+    color: black;
+}
+.sign_up-container {
+    background-color: white;
+    width: 480px;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 10px;
+}
+.form-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.clause {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.clause > a {font-weight: normal; text-decoration: none;}
+.clause > a:hover {text-decoration: underline;}
+
+
+.page-footer {
+    width: 100%;
+    height: 100%;
+    background-color: #FFF5ED;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.page-footer > a {
+    padding-left: 15px;
+    text-decoration: none;
+}
+.page-footer a:hover {color: #4f4c4f; text-decoration: underline;}
