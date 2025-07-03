@@ -1,0 +1,589 @@
+/*  File: contact_style.css
+    Lecturer: Thái Duy Khang, B2308301, khangb2308301@student.ctu.edu.vn
+    @Created: , updated:  */
+    
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.gc {   /* Tạo bố cục ban đầu tổng quát */
+    /* background-color: #FCFCFA; */
+    background-color: #F8F8F8;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto auto;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.header {
+    /* background-color: #F8F8F8; */
+    background-color: #F1F1F1;
+    grid-area: header;
+    position: fixed;    /* cố định theo màn hình không bị cuộn theo nội dung */
+    width: 100%;
+    z-index: 100;   /* đảm bảo nằm trên cùng, độ ưu tiên cao nhất */
+}
+.main {
+    grid-area: main;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.footer {
+    grid-area: footer;
+    padding: 20px;
+    /* background-color: #1F1F1F; */
+    background-color: #192733;
+}
+
+
+.page-header {
+    /* background-color: rgba(255, 216, 190, 0.7); background-color: #FFD8BE; */
+    /* border-bottom: 1px solid #E3DCD0; */          /* phần shadow dưới border-bottom
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;                 /* kích thước đã bao gồm padding và border */
+}
+
+.header-img {
+    width: 50px;
+}
+.nav-item {
+    /* font-family: 'Montserrat'; */
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-header a:hover {text-decoration: underline; color: #4f4c4f;}
+
+.search-container {
+    flex: 1;
+    min-width: 250px;
+    height: 40px;
+    display: flex;
+}
+.search-bar {
+    width: 100%; height: 100%;
+    box-sizing: border-box;                 /* width đã chứa cả padding và border */
+    background-color: #F3F3F3;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+}
+.search-bar i {
+    width: 21px;
+    margin-right: 10px;
+}
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%; height: 100%;
+    font-size: 15px;
+}
+.search-bar:hover {border-color: #c2bebe;}
+.search-bar:focus-within {border-color: black;}
+
+.button-header {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+.btn {              /* style chung cho button */
+    width: 105px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 13px;
+    cursor: pointer;
+}
+.btn-SignIn {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: black;
+    background-color: white;
+}
+.btn-SignUp {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: white;
+    background-color: black;
+}
+.btn:hover {cursor: pointer;}
+
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+.menu {   /* menu ẩn mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EDEDED;
+    border: 1px solid black;
+    border-radius: 7px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-item {
+    border: 1px solid rgb(154, 154, 154);
+    padding: 5px;
+}
+.menu-item a {
+    color: black;
+    text-decoration: none;
+}
+.menu.hidden {display: none;}
+#mobileMenu.active {
+    display: block;
+}
+
+
+
+/* title */
+.content-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 80px;
+    /* max-width: 1000px;
+    width: 100%;
+    word-wrap: break-word;
+    padding: 0 40px;
+    text-align: center;
+    margin-top: clamp(20px, 2vw, 40px); */
+}
+.content-heading-line {
+    max-width: 1100px;
+    width: 80%;
+    height: 2px;
+    border: none;
+    background-color: black;
+    text-align: center;
+}
+.content-heading__title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: clamp(1.6rem, 8vw, 6rem);          /* 1rem = 16px min = 32px, max = 96px */
+    font-weight: 900;
+    text-align: center;
+    /* color: #B037A6; */
+    color: white;
+    background-color: black;
+    display: inline-block;
+    padding: 10px 30px;
+}
+.content-heading__subtitle {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: bold;
+    color: #707070;
+    text-align: center;
+}
+
+
+
+.contact-wrapper {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 25px 40px;
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+.contact-text {
+    flex: 4;
+    color: #213343;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-top: 70px;
+    /* padding: 80px 60px 0 50px; */
+    /* background-color: #F2F5F8; */
+}
+.contact-text__h2 {
+    font-size: clamp(1.2rem, 3vw + 1rem, 2.5rem);
+    font-weight: bold;
+    line-height: 1.8;
+}
+.contact-text__description {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.8;
+}
+/* .aside-line {
+    border: none;
+    max-width: 400px;
+    height: 1px;
+    background-color: #AAAAAA;
+    margin: 0;
+} */
+.contact-banner {
+    flex: 3;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+.contact-banner img {
+    width: 100%; height: 100%;
+    border-radius: 20px;
+    box-shadow: -7px 13px 16px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+
+
+.contact-cards {
+    border: 2px solid blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    top: -70px;
+    z-index: 2;                 /* đảm bảo .contact-card nằm trên các phần tử khác */
+}
+.card {
+    width: 290px;
+    height: 240px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 18px;
+    /* background-color: #F2F5F8; */
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.card i {
+    color: #99ACC2;
+    font-size: 40px;
+}
+.card h4 {
+    color: #213343;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;       /* font không hỗ trợ 900 */
+}
+.card .link-to-numberPhone {
+    color: black;
+    font-size: 21px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0;
+}
+.card .readmore {
+    font-size: 18px;
+    text-decoration: none;
+    
+}
+.card .btn {
+    width: 130px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.btn-ClickNgay {
+    border: none;
+    /* background-color: #B037A6; */
+    background-color: #4B69FF;
+    color: white;
+    margin-top: 20px;
+}
+
+
+
+.logo-slider {
+    border: 2px solid blue;
+}
+.logo-slider__title {
+    border: 2px solid red;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 900px;
+    width: 100%;
+    font-size: clamp(18px, 2vw, 30px);
+    font-weight: bold;
+    margin: 30px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* .logo-slider__animation {
+    border: 2px solid red;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    position: relative;
+    padding: 30px;
+} */
+
+/* .logo-track {
+    display: flex;
+    gap: 100px;
+    animation: scroll-left 20s linear infinite;
+}
+.logo-track-container {
+    width: 130px;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-track-container img {
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+} */
+
+
+
+.contact-form {
+    /* background-color: #F3F3F3; */
+    padding: 60px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("images/abstract-dark-tone-blank-background.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+/* .contact-form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/abstract-dark-tone-blank-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.8;
+} */
+.form-container {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 670px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.form-container h2 {
+    color: #213343;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0;
+}
+.label-col {
+    display: block;
+    max-width: 90%;
+    color: #213343;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 auto 6px auto;
+}
+.input-col {
+    background-color: #F6F9FC;
+    max-width: 90%;
+    margin: 0 auto 20px auto;
+}
+.input-col input, .input-col textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid #7691AD;
+    border-radius: 5px;
+    padding: 13px;
+    font-size: 18px;
+    font-family: inherit;
+}
+.contact-form__submit-button  {
+    text-align: center;
+}
+.contact-form__submit-button .btn {
+    width: 250px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.btn-GuiNgay {
+    color: white;
+    background-color: #FF5C35;
+    border: none;
+}
+
+
+/* Phần footer */
+.page-footer {
+    color: white;
+    /* background-color: #FFF5ED; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.footer-three-col {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 30px;
+}
+.footer-three-col__col-layout {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.footer-three-col__col-layout p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+.footer-three-col__col-layout i {
+    width: 20px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.footer-three-col__col-layout a {
+    color: #B6C7D6;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer-three-col__col-layout button {
+    width: 100px;
+    font-size: 20px;
+    padding: 10px;
+}
+.footer-line {
+    width: 300px;
+    height: 0.5px;
+    border: none;
+    background-color: white;
+}
+.social-icon {
+    font-size: 30px;
+    display: flex;
+    column-gap: 40px;
+}
+.social-icon a {
+    color: #AAAAAA;
+}
+.footer-logo img {
+    width: 90px;
+}
+.copyright {
+    color: #AAAAAA;
+    font-size: 12px;
+    font-weight: bold;
+}
+.footer-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 50px;
+    row-gap: 10px;
+}
+.footer-link a {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.page-footer a:hover {color: #4f4c4f; text-decoration: underline;}
+
+@media screen and (max-width: 1024px) {             /* áp dụng cho màn hình nhỏ hơn 1024px */
+    .gc {
+        grid-template-columns: 1fr;
+    }
+    .hamburger {display: block;}
+    .nav-item {display: none;}
+
+    .contact-wrapper {
+        border: 2px solid red;
+        width: 1000px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-text__h2, .contact-text__description {
+        text-align: center;
+    }
+    .contact-banner {
+        height: 400px;
+    }
+
+    .contact-cards {top: 0; margin-top: 40px;}
+
+    .footer-line {display: none;}
+}
+@media screen and (max-width: 768px) {              /* áp dụng cho màn hình nhỏ hơn 768px */
+    .contact-text, .contact-banner {
+        flex: 1 1 100%;
+        padding: 0;
+        text-align: center;
+    }
+    .search-container {display: none;}
+    
+}
+@media screen and (max-width: 600px) {
+    .page-header {
+        padding: 15px 20px;
+    }
+    .content-heading {
+        margin-top: 70px;
+    }
+    .btn {
+        width: 80px;
+        font-size: 12px;
+    }
+}
