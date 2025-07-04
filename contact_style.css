@@ -482,7 +482,9 @@ html, body {
 .footer-three-col__col-layout {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     row-gap: 15px;
+    max-width: 300px;
 }
 .footer-three-col__col-layout p {
     font-size: 16px;
@@ -574,6 +576,7 @@ html, body {
         text-align: center;
     }
     .search-container {display: none;}
+    
     
 
 
