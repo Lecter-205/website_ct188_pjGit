@@ -13,6 +13,7 @@
 //     }
 // }
 
+
 // Nhận sự kiện thanh tìm kiếm
 const frmSearch = document.getElementById('header-formSearch');
 const inputSearch = document.getElementById('searchInput');
@@ -41,3 +42,19 @@ iconSearch.addEventListener('click', searchForward);
 document.getElementById('btn-ClickNgay').addEventListener('click', function() {
     document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
 });
+
+
+// Khi click vào button Click Ngay thì sẽ cuộn trang tới id='faq'
+document.getElementById('btn-HoiNgay').addEventListener('click', function() {
+    document.getElementById('faq').scrollIntoView({behavior: 'smooth'});
+});
+
+
+// Mở phần bị ẩn khi click vào (faq-section)
+const onButtonClick = (event) => {
+    const faq_item = event.currentTarget.parentElement;         // lấy phần tử gắn sự kiện click hiện tại
+    faq_item.classList.toggle('active');            // hiển thị nội dung
+}
+
+const faqs_expand = document.querySelectorAll('.faq-question');
+faqs_expand.forEach(button => button.addEventListener('click', onButtonClick));
