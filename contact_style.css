@@ -344,7 +344,6 @@ html, body {
     border: 2px solid blue;
 }
 .logo-slider__title {
-    border: 2px solid red;
     font-family: 'Montserrat', sans-serif;
     max-width: 900px;
     width: 100%;
