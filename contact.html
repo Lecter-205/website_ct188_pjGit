@@ -7,23 +7,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title> Liên Hệ</title>
     <link rel="icon" href="images/favicon.ico">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet"> -->
-        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="contact_style.css">
-    <!-- Thêm thư viện AOS -->
-        <!-- Thêm vào trong <head> -->
+    <!-- Thêm vào trong <head> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- Thêm thư viện AOS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+    
+    <link rel="stylesheet" href="contact_style.css">
 </head>
-<body class="gc">
-    <header class="gi header">
+<body class="gc" id="body">
+    <header class="header">
         <div class="page-header">
             <img class="header-img" src="images/logo.png" alt="logo.png">
             <nav class="nav-header">
@@ -55,49 +57,58 @@
             </div>
         </div>
     </header>
-    <main class="gi main">
-        <section class="content-heading">
-            <hr class="content-heading-line">
-            <div class="content-heading__subtitle"> Get in touch.</div>
-            <div class="content-heading__title"> Liên Hệ & Hỗ Trợ</div>
+    <main class="main">
+        <section class="main-title-section">
+            <!-- <hr class="main-title-line"> -->
+            <div class="main-title-background"></div>
+            <div class="main-title__subtitle"> Mỗi cuộc gọi của bạn có thể cứu một mạng sống!</div>
+            <div class="main-title__title"> Liên Hệ & Hỗ Trợ</div>
             <div class="heading2">
                 <!-- <form class="search-bar" data-aos="fade-left">
                     <img src="images/loupe.png" alt="search-icon">
                     <input type="text" class="search-input" id="seatchBtn" placeholder="How can we help you">
                 </form> -->
             </div>
-                
-            </div>
         </section>
-        <article class="contact-section">
-            <div class="contact-gradient__border-box">
-                <div class="contact-wrapper">
-                    <div class="contact-text">
-                        <div class="contact-text__h1"> Home4Paws Là Gia Đình</div>
-                        <div class="contact-text__description"> Trang web của chúng tôi là nơi kết nối những tấm lòng nhân ái với các loài động vật cần được cứu trợ, cung cấp thông tin, hỗ trợ quyên góp và lan tỏa yêu thương đến những sinh linh bé nhỏ đang cần sự giúp đỡ!</div>
+
+
+        <article class="content-section">
+            <div class="content-gradient__border-box">
+                <div class="content-wrapper">
+                    <div class="content-text">
+                        <div class="content-text__h1" data-aos="fade-right" data-aos-delay="100"> Home4Paws Là Gia Đình</div>
+                        <div class="content-text__description" data-aos="fade-right" data-aos-delay="300"> Trang web của chúng tôi là nơi kết nối những tấm lòng nhân ái với các loài động vật cần được cứu trợ, cung cấp thông tin, hỗ trợ quyên góp và lan tỏa yêu thương đến những sinh linh bé nhỏ đang cần sự giúp đỡ!</div>
                     </div>
-                    <div class="contact-banner" data-aos="fade-up">
+                    <div class="content-image" data-aos="flip-left">
                         <img src="images/4121218.jpg" alt="4121218.jpg">
                     </div>
                 </div>
             </div>
 
             <div class="card-section">
-                <div class="card" data-aos="fade-right">
-                    <i class="fa-solid fa-phone"></i>
-                    <h4> Gọi cho chúng tôi</h4>
-                    <a href="#" class="link-to-numberPhone"> +84 898024866</a>
-                    <a href="tintuc.html" class="btn btn-DocTiep"> Xem chi tiết</a>
+                <div class="card-animate" data-aos="fade-right">
+                    <div class="card">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4> Về chúng tôi</h4>
+                        <a href="#" class="link-to-numberPhone"> +84 898024866</a>
+                        <a href="tintuc.html" class="btn btn-DocTiep"> Xem chi tiết</a>
+                    </div>
                 </div>
-                <div class="card" data-aos="fade-up">
-                    <i class="fa-solid fa-comments"></i>
-                    <h4> Chat với chúng tôi</h4>
-                    <button class="btn btn-ClickNgay" id="btn-ClickNgay"> Click ngay</button>
+                
+                <div class="card-animate" data-aos="fade-up">
+                    <div class="card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h4> Chat với chúng tôi</h4>
+                        <button class="btn btn-ClickNgay" id="btn-ClickNgay"> Click ngay</button>
+                    </div>
                 </div>
-                <div class="card" data-aos="fade-left">
-                    <i class="fa-solid fa-phone"></i>
-                    <h4> Feedback</h4>
-                    <button class="btn btn-HoiNgay" id="btn-HoiNgay"> Hỏi ngay</button>
+                
+                <div class="card-animate" data-aos="fade-left">
+                    <div class="card">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h4> FAQs</h4>
+                        <button class="btn btn-HoiNgay" id="btn-HoiNgay"> Hỏi ngay</button>
+                    </div>
                 </div>
             </div>
         </article>
@@ -133,13 +144,14 @@
         
         <section class="faq-section" id="faq">
             <div class="faq-wrapper">
-                <div class="faq-wrapper__h1"> Câu Hỏi Thường Gặp (FAQs)</div>
-                <div class="faq-item">
+                <div class="faq-wrapper__h1" data-aos="fade-right" data-aos-delay="100"> Câu Hỏi Thường Gặp (FAQs)</div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                     <button class="faq-question"> Tổ chức của chúng tôi hoạt động như thế nào?<span class="faq__plus-icon"> +</span></button>
                     <div class="faq-answer"> Chúng tôi là một tổ chức phi lợi nhuận chuyên cứu hộ, chữa trị và tìm nhà mới cho động vật bị bỏ rơi, lạc hoặc bị ngược đãi. Quy trình bao gồm: tiếp nhận, khám sức khỏe, phục hồi, và đưa ra các biện pháp nhận nuôi có kiểm duyệt.</div>
                 </div>
+
                 <hr class="faq-line">
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                     <button class="faq-question"> Tôi có thể ủng hộ bằng cách nào?<span class="faq__plus-icon"> +</span></button>
                     <div class="faq-answer">
                         <ul>
@@ -150,46 +162,57 @@
                         </ul>
                     </div>
                 </div>
+
                 <hr class="faq-line">
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                     <button class="faq-question" data-target="extra3"> Làm thế nào để báo cáo một trường hợp động vật cần cứu hộ?<span class="faq__plus-icon"> +</span></button>
                     <div id="extra3" class="faq-answer"> Vui lòng liên hệ qua hotline/email của chúng tôi hoặc điền form báo cáo trên website, cung cấp thông tin địa điểm, tình trạng con vật và hình ảnh (nếu có).</div>
                 </div>
+
                 <hr class="faq-line">
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
                     <button class="faq-question"> Làm sao để biết số tiền tôi quyên góp được sử dụng vào việc gì?<span class="faq__plus-icon"> +</span></button>
                     <div class="faq-answer"> Chúng tôi công khai báo cáo tài chính định kỳ trên website và gửi email cập nhật cho nhà hảo tâm. Mọi khoản chi đều minh bạch vì mục tiêu cứu trợ động vật.</div>
+                </div>
+                
+                <hr class="faq-line">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <button class="faq-question"> Tôi muốn hợp tác với trung tâm, liên hệ với ai?<span class="faq__plus-icon"> +</span></button>
+                    <div class="faq-answer"> Gửi email đến chúng tôi thông qua Form báo cáo trên website hoặc gọi 0898024866, tiêu đề: "Đề xuất hợp tác - [Tên tổ chức/cá nhân]".</div>
                 </div>
             </div>
         </section>
 
 
         <section class="form-section" id="contact">
-            <form class="form-container" onsubmit="return frmValidate(this)" action="tintuc.html" data-aos="fade-up">
+            <form class="form-container" action="tintuc.html">
                 <h2> Gửi Tin Nhắn Cho Chúng Tôi</h2>
-                <div class="contact-form__input-group">
+                <div class="contact-form__form-row">
                     <div class="label-col">
-                        <label for="iname"> Tên*</label>
+                        <label for="iname"> Tên *</label>
                     </div>
                     <div class="input-col">
-                        <input type="text" id="iname" minlength="3" required> 
+                        <input type="text" id="iName" minlength="3" required> 
                     </div>
+                    <small class="message">#</small>
                 </div>
-                <div class="contact-form__input-group">
+                <div class="contact-form__form-row">
                     <div class="label-col">
-                        <label for="iemail"> Email*</label>
+                        <label for="iemail"> Email *</label>
                     </div>
                     <div class="input-col">
-                        <input type="text" id="iemail" pattern="^[azA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+                        <input type="text" id="iEmail" required>
                     </div>
+                    <small class="message">#</small>
                 </div>
-                <div class="contact-form__input-group">
+                <div class="contact-form__form-row">
                     <div class="label-col">
-                        <label for="iquestion"> Bất cứ câu hỏi nào dành cho chúng tôi?</label>
+                        <label for="iTextBox"> Bạn cần chúng tôi trợ giúp những gì *</label>
                     </div>
                     <div class="input-col">
-                        <textarea id="iquestion" rows="4" minlength="10" required></textarea>
+                        <textarea id="iQuestion" rows="4" minlength="10" required></textarea>
                     </div>
+                    <small class="message">#</small>
                 </div>
                 <div class="contact-form__submit-button">
                     <button class="btn btn-GuiNgay" id="contact-form__submitForm"> Gửi ngay</button>
@@ -198,7 +221,7 @@
         </section>
         
     </main>
-    <footer class="gi footer">
+    <footer class="footer">
         <div class="page-footer">
             <section class="footer-three-col">
                 <div class="footer-three-col__col-layout">
@@ -241,7 +264,7 @@
                 <a href="https://www.pinterest.com" target="_blank"> Contact Us</a>
                 <a href="#" target="_blank"> Home</a>
                 <a href="https://www.pinterest.com" target="_blank"> Example</a>
-                <a href="#" target="_blank"> <i class="fa-solid fa-house"></i></a>
+                <a href="#body"><i class="fa-solid fa-house home"></i></a>
             </div>
             
         </div>

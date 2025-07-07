@@ -3,40 +3,41 @@
     @Created: , updated:  */
     
 html, body {
-    scroll-padding-top: 80px;               /* dùng khi cuộn trang */
+    scroll-padding-top: 80px;               /* Khi có thanh header cố định (fixed header) ở trên cùng, nếu không dùng scroll-padding-top, nội dung sẽ bị header che mất */
+    scroll-behavior: smooth;                /* cuộn trang mượt mà thay vì nhảy đột ngột */
     height: 100%;
     margin: 0; padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
 
-.gc {   /* Tạo bố cục ban đầu tổng quát */
+.gc {   /* Tạo bố cục ban đầu tổng quát | GC mức I | */
     /* background-color: #FCFCFA; */
     background-color: white;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 80px auto auto;
-
+    /* grid chia làm 3 vùng, gồm 1 cột 3 hàng */
     grid-template-areas:
         "header"
         "main"
         "footer";
 }
 
-.header {
+.header {               /* GI mức I | Nested GC mức I.1 | */
     /* background-color: #F8F8F8; */
     background-color: #F1F1F1;
     grid-area: header;
-    position: fixed;    /* cố định theo màn hình không bị cuộn theo nội dung */
+    position: fixed;            /* cố định theo màn hình không bị cuộn theo nội dung */
     width: 100%;
-    z-index: 100;   /* đảm bảo nằm trên cùng, độ ưu tiên cao nhất */
+    z-index: 100;               /* đảm bảo nằm trên cùng, độ ưu tiên cao nhất */
 }
-.main {
+.main {                 /* GI mức I | Nested GC mức I.1 | */
     grid-area: main;
     max-width: 100%;
     box-sizing: border-box;
 }
-.footer {
+.footer {               /* GI mức I | Nested GC mức I.1 | */
     grid-area: footer;
     padding: 20px;
     /* background-color: #1F1F1F; */
@@ -44,24 +45,23 @@ html, body {
 }
 
 
-.page-header {
+
+/* Phần header */
+.page-header {              /* GI mức I.1 | Nested GC mức I.1.A | */
     /* background-color: rgba(255, 216, 190, 0.7); background-color: #FFD8BE; */
-    /* border-bottom: 1px solid #E3DCD0; */          /* phần shadow dưới border-bottom
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
     width: 100%;
     height: 100%;
     padding: 20px 40px;
     display: flex;
     gap: 20px;
     align-items: center;
-    box-sizing: border-box;                 /* kích thước đã bao gồm padding và border */
+    box-sizing: border-box;               /* kích thước đã bao gồm padding và border */
 }
 
 .header-img {
     width: 50px;
 }
 .nav-item {
-    /* font-family: 'Montserrat'; */
     color: black;
     font-weight: 700;
     text-decoration: none;
@@ -106,8 +106,9 @@ html, body {
     margin-left: auto;
 }
 .btn {              /* style chung cho button */
+    font-family: 'Satoshi', sans-serif;
     width: 105px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     border: 1px solid black;
     border-radius: 15px;
@@ -124,7 +125,7 @@ html, body {
     color: white;
     background-color: black;
 }
-.btn:hover {cursor: pointer;}
+.btn:hover {cursor: pointer;}               /* áp dụng thuộc tính cho toàn bộ button */
 
 
 .hamburger {
@@ -134,7 +135,7 @@ html, body {
     font-size: 35px;
     cursor: pointer;
 }
-.menu {   /* menu ẩn mặc định */
+.menu {                 /* menu ẩn mặc định */
     position: fixed;
     top: 0;
     left: 0;
@@ -169,86 +170,106 @@ html, body {
 
 
 
-/* title */
-.content-heading {
+/* Phần Big Title */
+/* GI mức I.1 | Nested GC mức I.1.A | */
+.main-title-section {
+    position: relative;             /* cho phép sử dụng các phần tử con absolute như ::before nằm đúng trong section. */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin-top: 80px;
-    /* max-width: 1000px;
-    width: 100%;
-    word-wrap: break-word;
-    padding: 0 40px;
-    text-align: center;
-    margin-top: clamp(20px, 2vw, 40px); */
+    height: 480px;
+    overflow: hidden;            /* ẩn phần vượt ra khỏi khung */
+    color: white;
+    z-index: 1;             /* nằm trên lớp nền z_index: 0 */
 }
-.content-heading-line {
+/* Lớp nền mờ bằng ::before */
+.main-title-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('images/cozy-lively-home-interior-design.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(1.2px);
+    z-index: 0;             /* đảm bảo nằm dưới cùng */
+}
+/* Text giữ rõ nét */
+.main-title__subtitle,
+.main-title__title {
+    position: relative;
+    z-index: 1;
+}
+/* .main-title-line {
     max-width: 1100px;
     width: 80%;
     height: 2px;
     border: none;
     background-color: black;
     text-align: center;
-}
-.content-heading__title {
+} */
+.main-title__title {
+    border: 2px solid red;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.6rem, 8vw, 6rem);          /* 1rem = 16px min = 32px, max = 96px */
     font-weight: 900;
     text-align: center;
     /* color: #B037A6; */
     color: white;
-    background-color: black;
     display: inline-block;
-    padding: 10px 30px;
+    
 }
-.content-heading__subtitle {
-    font-size: clamp(14px, 2vw, 20px);
+.main-title__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(11px, 2vw, 18px);
     font-weight: bold;
-    color: #707070;
+    /* color: #707070; */
+    color: white;
     text-align: center;
 }
 
 
 
-.contact-section {
-    padding: 21px;
+/* Phần content */
+.content-section {                  /* GI mức I.1 | Nested GC mức I.1.A | */
+    padding: 22px;
 }
-.contact-gradient__border-box {
+.content-gradient__border-box {
     margin-top: 40px;
     background: linear-gradient(90deg, #76e0fe, #7f76ff);
     padding: 2px;                   /* tạo độ dày viền */
     border-radius: 16px;            /* bo góc viền */
     display: inline-block;          /* để fit nội dung */
 }
-.contact-wrapper {
+.content-wrapper {
     background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
     padding: 25px 40px;
-    border-radius: 14px;            /* bo viền bên trong nhỏ hơn một chút so với gradient-border-box */
+    border-radius: 14px;              /* bo viền bên trong nhỏ hơn một chút so với gradient-border-box */
     box-sizing: border-box;
 }
-.contact-text {
-    flex: 4;
+.content-text {
+    flex: 4;                /* chia bố cục thành 2 phần 4:3 (nội dung text chiếm 4 phần */
     color: #213343;
     display: flex;
     gap: 15px;
     flex-direction: column;
-    margin: auto 0;
-    /* padding: 80px 60px 0 50px; */
+    margin: auto 0;             /* căn giữa */
     /* background-color: #F2F5F8; */
 }
-.contact-text__h1 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+.content-text__h1 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
     font-weight: bold;
     line-height: 1.8;
 }
-.contact-text__description {
-    font-size: clamp(1rem, 3vw, 1.2rem);
+.content-text__description {
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
     font-weight: 400;
     line-height: 1.8;
 }
@@ -259,13 +280,13 @@ html, body {
     background-color: #AAAAAA;
     margin: 0;
 } */
-.contact-banner {
-    flex: 3;
+.content-image {
+    flex: 3;                /* chia bố cục thành 2 phần 4:3 (hình ảnh chiếm 3 phần */
     text-align: center;
     width: 100%;
     height: 430px;
 }
-.contact-banner img {
+.content-image img {
     width: 100%; height: 100%;
     border-radius: 20px;
     box-shadow: -7px 13px 16px rgba(0, 0, 0, 0.2);
@@ -274,7 +295,8 @@ html, body {
 
 
 
-.card-section {
+/* Phần card */
+.card-section {                 /* GI mức I.1.A | Nested GC mức I.1.A.a | */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -283,19 +305,24 @@ html, body {
     top: -70px;
     z-index: 2;                 /* đảm bảo .contact-card nằm trên các phần tử khác */
 }
+.card-animate {
+    display: inline-block;
+}
 .card {
-    width: 290px;
-    height: auto;
+    width: 320px;
+    height: 310px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 18px;
     /* background-color: #F2F5F8; */
     background-color: #FFFFFF;
     padding: 40px 20px;
-    text-align: center;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 28px;
+    transition: transform 0.15s linear;
 }
 .card i {
     color: #99ACC2;
@@ -320,9 +347,9 @@ html, body {
 .card a.btn-DocTiep {
     border: none;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
-    background-color: black;
+    background-color: #FF5C35;
 }
 .card .btn {
     width: 130px;
@@ -332,15 +359,20 @@ html, body {
 .btn-ClickNgay, .btn-HoiNgay {
     border: none;
     /* background-color: #B037A6; */
-    background-color: #4B69FF;
+    /* background-color: #4B69FF; */
+    background-color: #FF5C35;
     color: white;
     margin-top: 20px;
 }
 
+button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, a.btn-DocTiep:hover {background-color: #fc7c5c;}
+.card:hover {
+    transform: scale(1.04);
+}
 
 
-
-.logo-slider {
+/* Phần logo slider */
+.logo-slider {                  /* GI mức I.1 | Nested GC mức I.1.A | */
     border: 2px solid blue;
 }
 .logo-slider__title {
@@ -395,10 +427,11 @@ html, body {
 
 
 
-.faq-section {
+/* Phần FAQs */
+.faq-section {                  /* GI mức I.1 | Nested GC mức I.1.A | */
     /* background-color: #F2F3F5; */
     background-color: #36383D;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,7 +449,7 @@ html, body {
     border: none;
     color: white;
     background: transparent;
-    font-size: clamp(13px, 2vw, 20px);
+    font-size: clamp(14px, 2vw, 20px);
     font-weight: bold;
     text-align: left;
     width: 100%;
@@ -429,6 +462,7 @@ html, body {
 }
 .faq__plus-icon {
     font-size: clamp(20px, 2vw, 32px);
+    transition: transform 0.3s ease-in-out;
 }
 .faq-line {
     width: 100%;
@@ -445,49 +479,39 @@ html, body {
 
 .faq-answer {
     max-height: 0;
-    overflow: hidden;
+    visibility: hidden;             /* tạm thời bị ẩn đi khi chưa active */
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in;
     color: #BFBFBF;
     padding: 0; margin: 0;
-    font-size: clamp(11px, 2vw, 17px);
+    font-size: clamp(12px, 2vw, 17px);
     line-height: 1.6em;
 }
 .faq-item.active .faq-answer {
+    visibility: visible;            /* hiện ra khi active */
     max-height: 500px;
     opacity: 1;
     padding-bottom: 10px;
 }
 .faq-item.active .faq-question span {
-  transform: rotate(45deg);             /* Turn '+' into 'x' */
+  transform: rotate(45deg);             /* Chuyển từ '+' thành 'x' */
 }
 
 
 
-
-.form-section {
+/* Phần điền form */
+.form-section {                 /* GI mức I.1 | Nested GC mức I.1.A | */
     /* background-color: #F3F3F3; */
     padding: 45px 40px 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("images/abstract-dark-tone-blank-background.jpg");
+    background-image: url("images/banner.jpg");
     background-size: cover;
     background-position: center;
     /* background-color: #FDE050; */
 }
-/* .contact-form::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("images/abstract-dark-tone-blank-background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 0;
-    opacity: 0.8;
-} */
 .form-container {
     background-color: white;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
@@ -515,7 +539,7 @@ html, body {
 .input-col {
     background-color: #F6F9FC;
     max-width: 90%;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 19px auto;
 }
 .input-col input, .input-col textarea {
     width: 100%;
@@ -523,9 +547,8 @@ html, body {
     background: transparent;
     border: 1px solid #7691AD;
     border-radius: 5px;
-    padding: 13px;
+    padding: 12px;
     font-size: clamp(12px, 2vw, 18px);
-    font-family: inherit;
 }
 .contact-form__submit-button  {
     text-align: center;
@@ -541,10 +564,31 @@ html, body {
     border: none;
 }
 
+.message {
+    display: none;
+    width: 90%;
+    margin: -10px auto 9px auto;
+}
+.contact-form__form-row.error .input-col input, .contact-form__form-row.error .input-col textarea {               /* đổi màu viền khi thoát khỏi ô input */
+    border: 1px solid red;
+}
+.contact-form__form-row.error .message {            /* hiện thông báo lỗi khi thoát khỏi ô input */
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+.contact-form__form-row.success .message {            /* hiện thông báo lỗi khi thoát khỏi ô input */
+    display: block;
+    color: blue;
+    font-size: 14px;
+}
+
+button.btn-GuiNgay:hover {background-color: #f97d5e;}
+
 
 
 /* Phần footer */
-.page-footer {
+.page-footer {                  /* GI mức I | Nested GC mức I.1 | */
     color: white;
     /* background-color: #FFF5ED; */
     display: flex;
@@ -557,7 +601,7 @@ html, body {
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                /* dùng flex wrap thay cho grid 3 cột */
     justify-content: space-around;
     gap: 30px;
     padding: 30px;
@@ -628,6 +672,7 @@ html, body {
 
 
 
+/* Phần Responsive */
 @media screen and (max-width: 1024px) {             /* áp dụng cho màn hình nhỏ hơn 1024px */
     .gc {
         grid-template-columns: 1fr;
@@ -635,13 +680,13 @@ html, body {
     .hamburger {display: block;}
     .nav-item {display: none;}
 
-    .contact-wrapper {
+    .content-wrapper {
         width: 1000px;
         width: 100%;
         flex-direction: column;
         align-items: center;
     }
-    .contact-text__h1, .contact-text__description {
+    .content-text__h1, .content-text__description {
         text-align: center;
     }
 
@@ -650,7 +695,7 @@ html, body {
     .footer-line {display: none;}
 }
 @media screen and (max-width: 768px) {              /* áp dụng cho màn hình nhỏ hơn 768px */
-    .contact-text, .contact-banner {
+    .content-text, .content-image {
         flex: 1 1 100%;
         padding: 0;
         text-align: center;
@@ -660,12 +705,12 @@ html, body {
     
     
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {              /* áp dụng cho màn hình điện thoại */
     .page-header {
         padding: 15px 20px;
     }
 
-    .content-heading {
+    .main-title {
         margin-top: 70px;
     }
 
@@ -674,7 +719,7 @@ html, body {
         font-size: 12px;
     }
 
-    .contact-wrapper {
+    .content-wrapper {
         padding: 25px 10px;
     }
 
@@ -683,7 +728,7 @@ html, body {
     }
 
     .form-section {
-        padding: 30px 0 0 0;
+        padding: 40px 0 0 0;
     }
     .form-container {
         box-shadow: none;
