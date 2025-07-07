@@ -198,7 +198,7 @@ html, body {
 }
 /* Text giữ rõ nét */
 .main-title__subtitle,
-.main-title__title {
+.main-title__title, .main-title__btn-SignIn {
     position: relative;
     z-index: 1;
 }
@@ -226,6 +226,24 @@ html, body {
     /* color: #707070; */
     color: white;
     text-align: center;
+}
+button.main-title__btn-SignIn {
+    background-color:  white;
+    color: black;
+    border: none;
+    border-radius: 22px;
+    font-size: clamp(11px, 2vw, 15px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+button.main-title__btn-SignIn i {        
+    font-size: clamp(10px, 2vw, 14px);
+    transition: transform 0.3s ease;
+}
+.main-title__btn-SignIn:hover i {
+  transform: translateX(4px);           /* hiệu ứng mũi tên trượt sang phải */
 }
 
 

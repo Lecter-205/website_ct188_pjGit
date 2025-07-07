@@ -26,7 +26,7 @@ iconSearch.addEventListener('click', searchForward);
 
 //  Khi click vào button "ClickNgay" thì sẽ cuộn trang tới id='contact'
 document.getElementById('btn-ClickNgay').addEventListener('click', function() {
-    document.getElementById('contact').scrollIntoView();
+    document.getElementById('contactForm').scrollIntoView();
 });
 
 
