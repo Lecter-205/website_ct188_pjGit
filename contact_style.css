@@ -211,15 +211,13 @@ html, body {
     text-align: center;
 } */
 .main-title__title {
-    border: 2px solid red;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: clamp(1.6rem, 8vw, 6rem);          /* 1rem = 16px min = 32px, max = 96px */
+    font-size: clamp(1.8rem, 8vw, 6rem);          /* 1rem = 16px min = 32px, max = 96px */
     font-weight: 900;
     text-align: center;
     /* color: #B037A6; */
     color: white;
     display: inline-block;
-    
 }
 .main-title__subtitle {
     font-family: 'Montserrat', sans-serif;
