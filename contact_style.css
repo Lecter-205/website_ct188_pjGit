@@ -368,7 +368,6 @@ button.main-title__btn-SignIn i {
     text-decoration: none;
     margin: 0;
 }
-
 button.btn-XemThem {
     border: none;
     text-decoration: none;
@@ -392,62 +391,6 @@ button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, button.btn-XemThem:hover {
 .card:hover {
     transform: scale(1.05);
 }
-
-
-
-/* Phần logo slider */
-.logo-slider {                  /* GI mức I.1 | Nested GC mức I.1.A | */
-    border: 2px solid blue;
-}
-.logo-slider__title {
-    font-family: 'Montserrat', sans-serif;
-    max-width: 900px;
-    width: 100%;
-    font-size: clamp(20px, 2vw, 30px);
-    font-weight: bold;
-    margin: 30px auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* .logo-slider__animation {
-    border: 2px solid red;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100vw;
-    position: relative;
-    padding: 30px;
-} */
-
-/* .logo-track {
-    display: flex;
-    gap: 100px;
-    animation: scroll-left 20s linear infinite;
-}
-.logo-track-container {
-    width: 130px;
-    height: 50px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo-track-container img {
-    border: 2px solid red;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-} */
 
 
 
@@ -751,13 +694,14 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
     }
 
     /* .card-section {top: 0; margin-top: 40px;} */
+    
     .map-section {
         flex-direction: column;
     }
     .map-section__mapEmbed {
         flex: none;         /* ngừng để flex quyết định height */
         width: 80%;         /* chiều rộng mới bằng 80% chiều rộng cũ */
-        height: 380px;      /* chiều cao mới */
+        height: 280px;      /* chiều cao mới */
     }
     .map-section__content {
         width: 80%;
@@ -767,18 +711,11 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
     .footer-line {display: none;}
 }
 @media screen and (max-width: 768px) {              /* áp dụng cho màn hình nhỏ hơn 768px */
-    .content-text, .content-image {
-        flex: 1 1 100%;
-        padding: 0;
-        text-align: center;
-    }
-    .search-container {display: none;}
     
-    .card-container {
-        gap: 18px;
-    }
+    .search-container {display: none;}
 
     .map-section__mapEmbed {
+        width: 90%;        /* chiều rộng bằng 90% ban đầu */
         height: auto;      /* tự động thiết lập chiều cao */
     }
 
@@ -786,23 +723,26 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
         padding: 25px 0 0 0;
     }
     .content-text {
-        padding: 20px;
+        padding: 25px;
     }
     
+    .card-container {
+        gap: 0;
+    }
     .card-animate {
         width: 100%;
     }
     .card {
-        all: unset;
+        all: unset;         /* loại bỏ toàn bộ luật của card và thêm mới */
         width: 100%;
         border-top: 1px solid black;
         padding: 20px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
-
+        gap: 18px;
         transition: transform 0.15s linear;
     }
 
@@ -816,10 +756,6 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
     .btn {
         width: 7em;
         font-size: 12px;
-    }
-
-    .content-wrapper {
-        padding: 25px 10px;
     }
 
     .card {
