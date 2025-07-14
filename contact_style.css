@@ -353,46 +353,42 @@ button.main-title__btn-SignIn i {
 }
 .card i {
     color: #99ACC2;
-    font-size: 40px;
+    font-size: clamp(32px, 2vw, 40px);
 }
 .card h4 {
     color: #213343;
     margin: 0;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 600;       /* font không hỗ trợ 900 */
 }
 .card .link-to-numberPhone {
     color: #0068B1;
-    font-size: 21px;
+    font-size: clamp(16px, 2vw, 21px);
     font-weight: 600;
     text-decoration: none;
     margin: 0;
 }
-.card a.btn {
-    width: 90px;
-}
-.card a.btn-DocTiep {
+
+button.btn-XemThem {
     border: none;
     text-decoration: none;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     color: white;
     background-color: #FF5C35;
 }
-.card .btn {
+.card .btn {        /* luật riêng cho các nút của phần tử card */
     width: 130px;
-    font-size: 16px;
+    font-size: 1em;
     border-radius: 10px;
 }
 .btn-ClickNgay, .btn-HoiNgay {
     border: none;
-    /* background-color: #B037A6; */
-    /* background-color: #4B69FF; */
     background-color: #FF5C35;
     color: white;
     margin-top: 20px;
 }
 
-button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, a.btn-DocTiep:hover {background-color: #fc7c5c;}
+button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, button.btn-XemThem:hover {background-color: #fc7c5c;}
 .card:hover {
     transform: scale(1.05);
 }
@@ -458,15 +454,15 @@ button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, a.btn-DocTiep:hover {backg
 /* Phần Map */
 .map-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 40px;
-    background-color: #99ACC2;
+    background-color: #3E3A55;
     padding: 40px;
 }
 .map-section__mapEmbed {
     flex: 1;            /* chia lam 2 phan bang nhau */
-    max-width: 600px; height: 350px;
-    border: 2px solid red;
+    width: 600px; height: 350px;
 }
 .map-section__mapEmbed iframe {
     width: 100%; height: 100%;
@@ -475,15 +471,19 @@ button.btn-ClickNgay:hover, button.btn-HoiNgay:hover, a.btn-DocTiep:hover {backg
 }
 .map-section__content {
     flex: 1;            /* chia lam 2 phan bang nhau */
-    color: white;
 }
 .map-section__content h2 {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: bold;
-    font-size: 28px;
+    font-size: clamp(14px, 3vw, 28px);
+    color: white;
+}
+.map-section__content h2 i {        /* luật cho icon bản đồ */
+    margin-right: 14px;
 }
 .map-section__content p {
-    font-size: 18px;
+    font-size: clamp(12px, 2vw, 18px);
+    color: #E0E0E0;
 }
 
 
@@ -751,7 +751,18 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
     }
 
     /* .card-section {top: 0; margin-top: 40px;} */
-    
+    .map-section {
+        flex-direction: column;
+    }
+    .map-section__mapEmbed {
+        flex: none;         /* ngừng để flex quyết định height */
+        width: 80%;         /* chiều rộng mới bằng 80% chiều rộng cũ */
+        height: 380px;      /* chiều cao mới */
+    }
+    .map-section__content {
+        width: 80%;
+        text-align: center;
+    }
 
     .footer-line {display: none;}
 }
@@ -767,6 +778,10 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
         gap: 18px;
     }
 
+    .map-section__mapEmbed {
+        height: auto;      /* tự động thiết lập chiều cao */
+    }
+
     .content-wrapper {
         padding: 25px 0 0 0;
     }
@@ -774,18 +789,32 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
         padding: 20px;
     }
     
+    .card-animate {
+        width: 100%;
+    }
+    .card {
+        all: unset;
+        width: 100%;
+        border-top: 1px solid black;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        transition: transform 0.15s linear;
+    }
+
+
 }
 @media screen and (max-width: 600px) {              /* áp dụng cho màn hình điện thoại */
     .page-header {
         padding: 15px 20px;
     }
 
-    .main-title {
-        margin-top: 70px;
-    }
-
     .btn {
-        width: 80px;
+        width: 7em;
         font-size: 12px;
     }
 
@@ -796,6 +825,11 @@ button.btn-GuiNgay:hover {background-color: #f97d5e;}
     .card {
         gap: 25px;
     }
+    .card .btn {
+        width: 9em;         
+        font-size: 0.7em;
+    }
+
 
     .form-section {
         padding: 40px 0 0 0;

@@ -19,7 +19,7 @@ function searchForward(e) {
     }
 }
 
-inputSearch.addEventListener('keydown', checkEnterKey);
+inputSearch.addEventListener('keydown', checkEnterKey);     /* lấy sự kiện nhấn phím Enter */
 iconSearch.addEventListener('click', searchForward);
 
 
@@ -28,7 +28,6 @@ iconSearch.addEventListener('click', searchForward);
 document.getElementById('btn-ClickNgay').addEventListener('click', function() {
     document.getElementById('contactForm').scrollIntoView();
 });
-
 
 
 // Khi click vào button "HoiNgay" thì sẽ cuộn trang tới id='faq'
