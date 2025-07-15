@@ -1,0 +1,259 @@
+<!--File: contact.html
+    Lecturer: Thái Duy Khang, B2308301, khangb2308301@student.ctu.edu.vn
+    Mã nguồn tham khảo: https://www.w3schools.com/html/,... -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Liên Hệ</title>
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Sử dụng icon từ fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Thêm thư viện AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="contact_style.css">
+</head>
+<body class="gc" id="body">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-title">
+                <a href="/index.html">
+                    <img src="images/logo.png" alt="Logo" />
+                    <span class="site-title">Home4Paws</span>
+                </a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="nav-container" id="main-menu">
+                <a href="/index.html" class="menu-logo-title">
+                    <img src="/Data/images/Logo.png" alt="Logo nhỏ" />
+                    <span class="site-title">Home4Paws</span>
+                </a>
+                <nav>
+          <a href="index.html">HOME</a>
+          <a href="#">PAGE2</a>
+          <a href="/login.html" class="active">ĐĂNG KÝ/ĐĂNG NHẬP</a>
+          <a href="/sản phẩm/Code/adoption.html" class="active">NHẬN NUÔI</a>
+          <a href="/sản phẩm/Code/product.html" class="active">SẢN PHẨM</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <section class="main-title-section">
+            <div class="main-title-background"></div>
+            <div class="main-title__subtitle"> Mỗi cuộc gọi của bạn có thể cứu một mạng sống!</div>
+            <div class="main-title__title"> Liên Hệ & Hỗ Trợ</div>
+            <button onclick="window.location.href='dangnhap.html'" class="btn main-title__btn-SignIn"> Log in<i class="fa-solid fa-arrow-right"></i></button>
+        </section>
+
+
+        <article class="content-section">
+            <div class="content-gradient__border-box">
+                <div class="content-wrapper">
+                    <div class="content-text">
+                        <div class="content-text__h1" data-aos="fade-right" data-aos-delay="100"> Home4Paws Là Gia Đình</div>
+                        <div class="content-text__description" data-aos="fade-right" data-aos-delay="300"> Trang web của chúng tôi là nơi kết nối những tấm lòng nhân ái với các loài động vật cần được cứu trợ, cung cấp thông tin, hỗ trợ quyên góp và lan tỏa yêu thương đến những sinh linh bé nhỏ đang cần sự giúp đỡ!</div>
+                    </div>
+                    <div class="video-container">
+                        <video src="videos/A Visit to Kitten Rescue - Explore Live Nature Cams (720p, h264).mp4" poster="images/thumbnail.png" type="video/mp4" preload="auto" autoplay loop muted></video>
+                        <figcaption class="video-caption">Nguồn: <a href="https://youtu.be/67pmwQPnw_w?si=uEDjZNK3IyrTxvIr" target="_blank">A Visit To Kitten Rescue</a></figcaption>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+            
+        <section class="card-section">
+            <div class="card-title">Giải đáp mọi thắc mắc</div>
+            <div class="card-container">
+                <div class="card-animate" data-aos="fade-right">
+                    <div class="card">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4> Đăng ký nhận nuôi</h4>
+                        <a href="#" class="link-to-numberPhone"> +84 898024866</a>
+                        <button class="btn btn-XemThem" onclick="window.location.href='adoption.html'" id="btn-DocTiep">Xem thêm</button>
+                    </div>
+                </div>
+                
+                <div class="card-animate" data-aos="fade-up">
+                    <div class="card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h4> Phản hồi trong vòng 24h</h4>
+                        <button class="btn btn-ClickNgay" id="btn-ClickNgay">Click ngay</button>
+                    </div>
+                </div>
+
+                <div class="card-animate" data-aos="fade-left">
+                    <div class="card">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h4> FAQs</h4>
+                        <button class="btn btn-HoiNgay" id="btn-HoiNgay">Hỏi ngay</button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        
+        <section class="map-section">
+            <div class="map-section__mapEmbed">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8414543771073!2d105.76804037501903!3d10.02993897251885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2sCan%20Tho%20University!5e0!3m2!1sen!2s!4v1752027175933!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-section__content">
+                <h2><i class="fa-solid fa-map-location-dot"></i>Địa chỉ của chúng tôi</h2>
+                <p>Đại học Cần Thơ, đường 3/2, phường Xuân Khánh, quận Nink Kiều, TPCT</p>
+            </div>
+        </section>
+
+        
+        <section class="faq-section" id="faq">
+            <div class="faq-wrapper">
+                <div class="faq-wrapper__h1" data-aos="fade-right" data-aos-delay="100">Câu Hỏi Thường Gặp (FAQs)</div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question">Tổ chức của chúng tôi hoạt động như thế nào?<span class="faq__plus-icon"> +</span></button>
+                    <div class="faq-answer">Chúng tôi là một tổ chức phi lợi nhuận chuyên cứu hộ, chữa trị và tìm nhà mới cho động vật bị bỏ rơi, lạc hoặc bị ngược đãi. Quy trình bao gồm: tiếp nhận, khám sức khỏe, phục hồi, và đưa ra các biện pháp nhận nuôi có kiểm duyệt.</div>
+                </div>
+
+                <hr class="faq-line">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <button class="faq-question">Tôi có thể ủng hộ bằng cách nào?<span class="faq__plus-icon"> +</span></button>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Quyên góp tiền qua trang web hoặc ví điện tử.</li>
+                            <li>Tình nguyện tham gia chăm sóc, vận chuyển, hoặc tổ chức sự kiện.</li>
+                            <li>Chia sẻ thông tin về các bé vật cần giúp đỡ lên mạng xã hội.</li>
+                            <li>Ủng hộ vật phẩm như thức ăn, thuốc, chăn đệm.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="faq-line">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <button class="faq-question" data-target="extra3">Làm thế nào để báo cáo một trường hợp động vật cần cứu hộ?<span class="faq__plus-icon"> +</span></button>
+                    <div id="extra3" class="faq-answer">Vui lòng liên hệ qua hotline/email của chúng tôi hoặc điền form báo cáo trên website, cung cấp thông tin địa điểm, tình trạng con vật và hình ảnh (nếu có).</div>
+                </div>
+
+                <hr class="faq-line">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <button class="faq-question">Làm sao để biết số tiền tôi quyên góp được sử dụng vào việc gì?<span class="faq__plus-icon"> +</span></button>
+                    <div class="faq-answer">Chúng tôi công khai báo cáo tài chính định kỳ trên website và gửi email cập nhật cho nhà hảo tâm. Mọi khoản chi đều minh bạch vì mục tiêu cứu trợ động vật.</div>
+                </div>
+                
+                <hr class="faq-line">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <button class="faq-question">Tôi muốn hợp tác với trung tâm, liên hệ với ai?<span class="faq__plus-icon"> +</span></button>
+                    <div class="faq-answer">Gửi email đến chúng tôi thông qua Form báo cáo trên website hoặc gọi 0898024866, tiêu đề: "Đề xuất hợp tác - [Tên tổ chức/cá nhân]".</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="form-section" id="contactForm">
+            <form class="form-container" method="get">
+                <h2>Gửi Tin Nhắn Cho Chúng Tôi</h2>
+                <div class="contact-form__form-row">
+                    <div class="label-col">
+                        <label for="iname">Tên *</label>
+                    </div>
+                    <div class="input-col">
+                        <input type="text" id="iName" minlength="3" required> 
+                    </div>
+                    <small class="message">#</small>
+                </div>
+                <div class="contact-form__form-row">
+                    <div class="label-col">
+                        <label for="iemail">Email *</label>
+                    </div>
+                    <div class="input-col">
+                        <input type="email" id="iEmail" required>
+                    </div>
+                    <small class="message">#</small>
+                </div>
+                <div class="contact-form__form-row">
+                    <div class="label-col">
+                        <label for="iTextBox">Bạn cần chúng tôi trợ giúp những gì *</label>
+                    </div>
+                    <div class="input-col">
+                        <textarea id="iQuestion" rows="4" minlength="10" required></textarea>
+                    </div>
+                    <small class="message">#</small>
+                </div>
+                <div class="contact-form__submit-button">
+                    <button class="btn btn-GuiNgay" id="contact-form__submitForm">Gửi ngay</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="page-footer">
+            <section class="footer-three-col">
+                <div class="footer-three-col__col-layout">
+                    <p> Về Chúng Tôi</p>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Tin tức & Blogs</a>
+                    <a href="#">Tài khoản</a>
+                    <a href="#">Khuyến mãi</a>
+                </div>
+                <div class="footer-three-col__col-layout">
+                    <p> Chính Sách</p>
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Hỗ trợ và chăm sóc</a>
+                    <a href="#">Phương thức thanh toán</a>
+                </div>
+                <div class="footer-three-col__col-layout">
+                    <p> Liên Hệ</p>
+                    <a href="https://maps.app.goo.gl/feg3fUZPj2BGFgXf6" target="_blank"><i class="fa-solid fa-location-dot"></i> Đại học Cần Thơ, đường 3/2, phường Xuân Khánh, quận Nink Kiều, TPCT</a>
+                    <a href="#contactForm"><i class="fa-solid fa-phone-volume"></i> 0898024866</a>
+                    <a href="#contactForm"><i class="fa-solid fa-envelope"></i> khangb2308301@student.ctu.edu.vn</a>
+                </div>
+            </section>
+
+            <div class="social-icon">
+                <hr class="footer-line">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <hr class="footer-line">
+            </div>
+
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+
+            <div class="copyright">Copyright &copy; 2025 Home4Paws VN.</div>
+            <div class="footer-link">
+                <a href="#faq">FAQs</a>
+                <a href="index.html"> Trang chủ</a>
+                <a href="product.html">Cửa hàng</a>
+                <a href="danhsach.html"> Danh sách</a>
+                <a href="#body"><i class="fa-solid fa-house home"></i></a>
+            </div>
+            
+        </div>
+    </footer>
+    <script src="contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 800,
+        once: false
+    })
+    </script>
+</body>
+</html>
